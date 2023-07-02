@@ -1,0 +1,32 @@
+<navigation xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/nav_graph"
+    app:startDestination="@id/postListFragment">
+
+    <fragment
+        android:id="@+id/postListFragment"
+        android:name="com.keysersoze.innobuzz.PostListFragment"
+        android:label="PostListFragment"
+        tools:layout="@layout/fragment_post_list">
+        <action
+            android:id="@+id/show_post_details"
+            app:destination="@id/postDetailsFragment2" />
+    </fragment>
+
+    <fragment
+        android:id="@+id/postDetailsFragment2"
+        android:name="com.keysersoze.innobuzz.PostDetailsFragment"
+        android:label="PostDetailsFragment"
+        tools:layout="@layout/fragment_post_details">
+        <argument
+            android:name="postId"
+            app:argType="integer" />
+        <argument
+            android:name="postTitle"
+            app:argType="string" />
+        <argument
+            android:name="postBody"
+            app:argType="string" />
+    </fragment>
+</navigation>
